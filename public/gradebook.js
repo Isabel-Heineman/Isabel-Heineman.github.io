@@ -37,10 +37,27 @@ function populateGradebook(data) {
 			const textNode = (document.createTextNode(fullName), // Create the text node with the full name
 				// Append the text node to the table cell
 			columns.name.appendChild(textNode)
-			columns.grade = {document.createElement('td')}; //Second column will be the grade
+			columns.grade = document.createElement('td'); //Second column will be the grade
 			columns.grade.appendChild(
 				// Just put the name in text, you could be fancy and figure out the letter grade here
-				// with either a bunch of conditions, or a JavaScript "switch" statement
+				// Calculate the letter grade based on total_grade
+			let letterGrade;
+			if (assignment.total_grade >= 90) {
+    				letterGrade = 'A';
+			} else if (assignment.total_grade >= 80) {
+   				 letterGrade = 'B';
+			} else if (assignment.total_grade >= 70) {
+  				  letterGrade = 'C';
+			} else if (assignment.total_grade >= 60) {
+   				 letterGrade = 'D';
+			} else {
+   				 letterGrade = 'F';
+}
+				// Append the letter grade to the grade cell
+			columns.grade.appendChild(
+   			document.createTextNode(letterGrade)
+);
+// with either a bunch of conditions, or a JavaScript "switch" statement
 				document.createTextNode(assignment.total_grade)
 			);
 			// Add the table data columns to the table row
