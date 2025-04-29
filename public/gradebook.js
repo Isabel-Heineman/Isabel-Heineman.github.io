@@ -34,7 +34,7 @@ function populateGradebook(data) {
 			columns.name = document.createElement('td'); //The first column's table data will be the name
 			columns.name.appendChild(
 				// Concatenate the full name: "last_name, first_name"
-				document.createTextNode("${assignment.last_name}, ${assignment.first_name}")
+				document.createTextNode('${assignment.last_name}, ${assignment.first_name}')
 			);
 			columns.grade = document.createElement('td'); // second column will be the grade
 			columns.grade.appendChild(
