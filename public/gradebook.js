@@ -37,7 +37,7 @@ function populateGradebook(data) {
 			const textNode = (document.createTextNode(fullName), // Create the text node with the full name
 				// Append the text node to the table cell
 			columns.name.appendChild(textNode)
-			columns.grade = document.createElement('td' // second column will be the grade
+			columns.grade = document.createElement('td'); // Error: columns is undefined
 			columns.grade.appendChild(
 				// Just put the name in text, you could be fancy and figure out the letter grade here
 				// with either a bunch of conditions, or a JavaScript "switch" statement
