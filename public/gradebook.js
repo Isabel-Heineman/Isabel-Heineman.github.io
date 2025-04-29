@@ -30,10 +30,10 @@ function populateGradebook(data) {
 	let tableElm = document.getElementById("gradebook"); // Get the gradebook table element
 		data.forEach((assignment) => { //For each row of data we're passed in
 			let row = document.createElement("tr"); //create a table row element
-			let columns = {}; // Handy place to stick the columns of information
+			let columns = []; // Handy place to stick the columns of information
 			columns.name = document.createElement('td'); // The first column's table data will be the name
 				// Concatenate the full name: "last_name, first_name"
-			const fullName = `${assignment.last_name}, ${assignment.first_name}`; // Combine last_name and first_name
+			const fullName = `{assignment.last_name}, {assignment.first_name}`; // Combine last_name and first_name
 			const textNode = (document.createTextNode(fullName), // Create the text node with the full name
 				// Append the text node to the table cell
 			columns.name.appendChild(textNode)
