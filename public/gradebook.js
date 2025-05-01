@@ -9,16 +9,16 @@ function fetchGradeData() {
 	// When the request changes status, we run this anonymous function
 	xhr.onreadystatechange = function(){
 	     // Check if we're done
-	     if(this.readyState === xhr.DONE){
+	     if(xhr.readyState === xhr.DONE){
 		     // Check if we're successful
-		     if(this.status !== 200){
+		     if(xhr.status !== 200){
 			     console.error(`Could not get grades.
-				Status: ${this.status}`);
+				Status: ${xhr.status}`);
 		     }
 		     // And then call the function to update the HTML with our data
-		     populateGradebook(JSON.parse(this.responseText));
+		     populateGradebook(JSON.parse(xhr.responseText));
 	     }
-	}.bind(xhr);
+	}.bind(this);
 	xhr.open("get", apiRoute, true);
 	xhr.send();
 }
