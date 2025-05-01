@@ -50,3 +50,5 @@ function populateGradebook(data) {
 		});
 					      
 }
+// Get the grade data
+fetchGradeData();
